@@ -1,22 +1,54 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.util.*;
 
+public class Main {  
+    static class InputReader {
+        public BufferedReader reader;
+        public StringTokenizer tokenizer;
 
-
-public class Main {
-    public static int solve() {
-        return 0;
-    }
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int testCases = 1;
-        testCases = scanner.nextInt();
-        for(int i = 0; i < testCases; i++) {
-            int ans = solve();
-            System.out.println(ans);
+        public InputReader(InputStream stream) {
+            reader = new BufferedReader(new InputStreamReader(stream), 32768);
+            tokenizer = null;
         }
-        scanner.close();
+
+        public String next() {
+            while (tokenizer == null || !tokenizer.hasMoreTokens()) {
+                try {
+                    tokenizer = new StringTokenizer(reader.readLine());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            return tokenizer.nextToken();
+        }
+
+        public int nextInt() {
+            return Integer.parseInt(next());
+        }
+
+        public long nextLong() {
+            return Long.parseLong(next());
+        }
+    }
+
+    public static void main(String[] Args) {
+        InputStream inputStream = System.in;
+        OutputStream outputStream = System.out;
+        InputReader in = new InputReader(inputStream);
+        PrintWriter out = new PrintWriter(outputStream);
+        
+        int testCases = 1;
+        testCases = in.nextInt();
+        
+        for(int i = 0; i < testCases; i++) {
+            
+        }
+
+        out.close(); // Close the output stream
     }
 }
